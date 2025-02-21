@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+
+    ports:
+      - "8000:4000"
+      - "8001:4001"
+
+    environment:
+      - NODE_ENV=production
+
+    restart: always
+
+    volumes:
+      - .:/app
+      - /app/node_modules
